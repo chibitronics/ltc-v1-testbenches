@@ -8,6 +8,7 @@
 
    Expected result:
     Lights 0-5 should turn on if all tests pass.
+    If lights 0 or 1 flash fast, then there is a mismatch on OS or hardware version expectation
  */
 
 #define ADVANCED 0   // turn to 1 to check atan, exp, ln
@@ -21,6 +22,25 @@ void setup() {
   for( i = 0; i < 6; i++ ) {
     pinMode(i, OUTPUT);
     digitalWrite(i, 0);
+  }
+
+
+  if( getOsVersion() != 0x105) {
+    while(1) { // flash A0 fast if getOsVersion doesn't match
+      delay(100);
+      digitalWrite(0, 0);
+      delay(100);
+      digitalWrite(0, 1);
+    }
+  }
+
+  if( getHwVersion() != 0x30100 ) {
+    while(1) { // flash A1 fast if getOsVersion doesn't match
+      delay(100);
+      digitalWrite(1, 0);
+      delay(100);
+      digitalWrite(1, 1);
+    }
   }
 
   float f1, f2, f3;
