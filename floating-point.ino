@@ -4,6 +4,10 @@
     - We trust that the underlying libraries pulled in are correct enough
     - The failure modes of concern are the thunks are missing or mis-matched 
 
+   Setup: none
+
+   Expected result:
+    Lights 0-5 should turn on if all tests pass.
  */
 
 #define ADVANCED 0   // turn to 1 to check atan, exp, ln
