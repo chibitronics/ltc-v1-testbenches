@@ -76,14 +76,20 @@ void setup() {
       delay(200);
     }
   }
-  // check that no two reboots generate the same sequence
+  // check that across reboots, the sequence is the same
   int pass = 1;
+  int allFFcount = 0;
   for( i = 0; i < 128; i++ ) {
     read_Word(i * 4, &data);
-    if( random(0x7FFFFFFF) == data ) {
+    if( random(0x7FFFFFFF) != data ) {
       pass = 0;
     }
+    if( data == 0xFFFFFFFF )
+      allFFcount++;
   }
+  if( allFFcount > 1 )  // this probably indicates failure in EEPROM API
+    pass = 0;
+  
   if( pass )
     digitalWrite(0, 1);
 
@@ -94,7 +100,12 @@ void setup() {
     read_Word(i * 4, &data);
     if( data != (unsigned long) random(10, 100) )
       pass = 0;
+    if( data == 0xFFFFFFFF )
+      allFFcount++;
   }
+  if( allFFcount > 1 )  // this probably indicates failure in EEPROM API
+    pass = 0;
+  
   if( pass )
     digitalWrite(1, 1);
 }
