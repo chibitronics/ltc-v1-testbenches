@@ -72,9 +72,11 @@ void setup() {
 
   createThread(blinky_area, sizeof(blinky_area), 20, do_blinky, NULL);
   pinMode(blink_chan, OUTPUT);
+  
+  analogReadResolution(10);
 }
 
-#define HIGH_THRESH 900
+#define HIGH_THRESH 512
 
 void loop() {
   int i;
