@@ -8,6 +8,8 @@
    by default when the pin is not being actively tested
 
    The scanner runs to test interactions between analogWrite() and tone().
+
+   The 1kHz constant tone should *always* be higher pitch than the PWM tone.
  */
 
 #include "ChibiOS.h"
