@@ -9,6 +9,8 @@
    If A5 is flashing or lit, you need to reboot to complete the test
    Furthermore, random numbers are spewed to the TX
 
+   It's also recommended to visually inspect the random stream coming out
+   using a dataviewer.
 */
 
 #include "EEPROM.h"
@@ -50,7 +52,7 @@ void setup() {
     digitalWrite(5, 1);
     // unseeded
     for( i = 0; i < 128; i++ ) {
-      write_Word(i * 4, random(0xFFFFFFFF));
+      write_Word(i * 4, random(0x7FFFFFFF));
     }
     // seeded & ranged
     randomSeed(0xbabe);
@@ -78,7 +80,7 @@ void setup() {
   int pass = 1;
   for( i = 0; i < 128; i++ ) {
     read_Word(i * 4, &data);
-    if( random(0xFFFFFFFF) == data ) {
+    if( random(0x7FFFFFFF) == data ) {
       pass = 0;
     }
   }
@@ -98,7 +100,7 @@ void setup() {
 }
 
 void loop() {
-  Serial.println(random(0xFFFFFFFF), HEX);
-  delay(50);
+  Serial.println(random(10,100));
+  delay(250);
 }
 
