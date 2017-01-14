@@ -20,6 +20,8 @@
     outputs on {3,4,5}, and vice-versa. It will take turns stimulating outputs
     {3,4,5} as digital out or analog out. 
 
+    If things are working correctly, the pattern visible on the stimulated output
+    is fade-flash-fade-flash. 
 */
 
 #include "ChibiOS.h"

@@ -18,7 +18,10 @@
     The female half measures the voltages coming from the male half. It measures
     based on tuplets of {0,1,2} and {3,4,5}. While measuring {0,1,2}, it drives
     outputs on {3,4,5}, and vice-versa. It will take turns stimulating outputs
-    {3,4,5} as digital out or analog out. 
+    {3,4,5} as digital out or analog out.
+
+    If things are working correctly, the pattern visible on the stimulated output
+    is fade-flash-fade-flash. 
 
 */
 
