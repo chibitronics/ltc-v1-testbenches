@@ -25,7 +25,7 @@ void setup() {
   }
 
 
-  if( getOsVersion() != 0x105) {
+  if( getOsVersion() != 0x10802) {
     while(1) { // flash A0 fast if getOsVersion doesn't match
       delay(100);
       digitalWrite(0, 0);
