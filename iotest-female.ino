@@ -74,6 +74,7 @@ void setup() {
   createThread(blinky_area, sizeof(blinky_area), 20, do_blinky, NULL);
   pinMode(blink_chan, OUTPUT);
 }
+
 void loop() {
   int i;
 
