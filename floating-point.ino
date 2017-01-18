@@ -124,17 +124,19 @@ void setup() {
   f2 = sin((float) pass) / cos((float) pass);
   if( f1 != f2 )
     pass = 0;
-#if ADVANCED  
   f3 = atan2(f1, 1.0);
   if( f3 != 1.0 )
     pass = 0;
 
+#if ADVANCED  
   if( log(f3) != 0.0 )
     pass = 0;
+  if( log10(f3) != 0.0 )
+    pass = 0;
+#endif
   
   if( exp(f3) != 2.718281828459045 )
     pass = 0;
-#endif
 
   f1 = (float) pass - 3.0; // should be -2
   f2 = f1 * (-2.0);
