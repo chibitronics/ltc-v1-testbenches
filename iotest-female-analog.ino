@@ -74,6 +74,7 @@ void setup() {
   pinMode(blink_chan, OUTPUT);
   
   analogReadResolution(10);
+  analogWriteResolution(8);
 }
 
 #define HIGH_THRESH 512
