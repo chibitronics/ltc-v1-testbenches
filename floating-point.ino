@@ -186,11 +186,8 @@ void setup() {
     pass = 0;
   if( atol("-2") != -2)
     pass = 0;
-  // if( strtoul("0x10", NULL, 16) != 16) // doesn't exist but in thunk table
-  //  pass = 0;
-
-  // if( strcmp(ltoa(30, outstr, 10), "30") != 0 ) // doesn't exist but in thunk table
-  //  pass = 0;
+  if( strtoul("0x10", NULL, 16) != 16) // doesn't exist but in thunk table
+    pass = 0;
 
   if( pass )
     digitalWrite(4, 1); // light up A4 to indicate string manipulation pass
