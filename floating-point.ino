@@ -195,7 +195,7 @@ void setup() {
   //// FLOATING POINT STRING PRINTING
   pass = 1;
   snprintf(outstr, 32, "%4.2f", f3 );
-  if( strncmp(outstr, "2.0", 32) != 0 )
+  if( strncmp(outstr, "2.00", 32) != 0 )
     pass = 0;
 
   if( !pass ) {
