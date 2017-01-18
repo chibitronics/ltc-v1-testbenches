@@ -82,7 +82,7 @@ void loop() {
       delay(1);
       yieldThread();
     }
-    detachInterrupt(digitalPinToInterrupt(intPin);
+    detachInterrupt(digitalPinToInterrupt(intPin));
     pinMode(blink_last, INPUT);
     pinMode(blink_chan, OUTPUT);
     blink_last = blink_chan;
