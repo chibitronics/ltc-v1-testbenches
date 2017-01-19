@@ -16,7 +16,7 @@
 
 int blink[6] = {0,0,0,0,0,0};
 
-#define FADE_RATE 4
+#define FADE_RATE 1
 
 int pwmD0 = 0;
 int pwmD1 = 0;
