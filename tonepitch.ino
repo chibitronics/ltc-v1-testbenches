@@ -22,6 +22,7 @@ void setup() {
   // initialize serial communications (for debugging only):
   Serial.begin(9600);
   pinMode(A3, OUTPUT);
+  pinMode(A5, INPUT); // this is broken as of 0x10503; has to be (5,INPUT);
 }
 
 void loop() {
