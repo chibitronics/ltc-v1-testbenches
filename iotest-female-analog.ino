@@ -22,6 +22,12 @@
 
     If things are working correctly, the pattern visible on the stimulated output
     is fade-flash-fade-flash. 
+
+    Symptom of incorrect working is if you see lots of pins flashing oddly.
+    This probably means that analogReadResolution() isn't working right. The
+    threshold is set so that the default 4095 (12-bit) resolution causes 
+    the test to work funky with the 512 threshold that assumes a 10-bit resolution
+    ADC
 */
 
 #include "ChibiOS.h"
@@ -29,7 +35,7 @@
 int blink_chan = 3;
 int blink_last = 3;
 
-#define FADE_RATE 8
+#define FADE_RATE 1
 
 static THD_WORKING_AREA(blinky_area, 64);
 static THD_FUNCTION(do_blinky, arg) {
@@ -74,7 +80,7 @@ void setup() {
   pinMode(blink_chan, OUTPUT);
   
   analogReadResolution(10);
-  analogWriteResolution(8);
+  //  analogWriteResolution(8); // THIS IS A DNI
 }
 
 #define HIGH_THRESH 512

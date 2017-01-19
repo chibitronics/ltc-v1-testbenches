@@ -28,7 +28,7 @@
 int blink_chan = 3;
 int blink_last = 3;
 
-#define FADE_RATE 8
+#define FADE_RATE 1
 
 static THD_WORKING_AREA(blinky_area, 64);
 static THD_FUNCTION(do_blinky, arg) {
