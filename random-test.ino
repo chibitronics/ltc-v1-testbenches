@@ -20,6 +20,8 @@
    A0 indicates we pass basic RNG functionality, and across reboots we get the same random number
    A1 indicates with the same seed, we get the same random number
    A2 indicates that with different seeds, we get different sequences
+     --> note that we're getting "random" seeds by sampling an analog input, so there is a slight (1% or so)
+       chance you have to run the test a couple times before it passes
 */
 
 #include "EEPROM.h"
